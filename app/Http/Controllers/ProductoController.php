@@ -35,7 +35,7 @@ class ProductoController extends Controller
         $producto->precio = $request->precio;
         $producto->save();
         
-        return redirect()->route('productos.index');
+        return redirect()->route('admin.productos.index');
     }
 
     /**
@@ -64,7 +64,7 @@ class ProductoController extends Controller
         $producto->precio = $request->precio;
         $producto->save();
         
-        return redirect()->route('productos.index');
+        return redirect()->route('admin.productos.index');
     }
 
     /**
@@ -73,7 +73,7 @@ class ProductoController extends Controller
     public function destroy(Producto $producto)
     {
         $producto->delete();
-        return redirect()->route('productos.index');
+        return redirect()->route('admin.productos.index');
     }
     public function usuarioIndex()
     {
