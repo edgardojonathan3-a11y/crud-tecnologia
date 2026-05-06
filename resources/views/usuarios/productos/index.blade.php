@@ -59,5 +59,6 @@
     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
         @csrf
     </form>
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
