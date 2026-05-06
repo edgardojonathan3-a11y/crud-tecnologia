@@ -26,7 +26,7 @@
     <label>Precio:</label>
     <input type="number" step="0.01" name="precio" required>
     
-    <button type="submit">💾 Guardar</button>
+    <button type="submit">Guardar</button>
     <a href="{{ route('admin.productos.index') }}" class="cancelar" style="background:gray; color:white; padding:10px; text-decoration:none;">Cancelar</a>
 </form>
 

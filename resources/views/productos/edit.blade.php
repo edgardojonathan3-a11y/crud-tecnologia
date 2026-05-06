@@ -27,7 +27,7 @@
     <label>Precio:</label>
     <input type="number" step="0.01" name="precio" value="{{ $producto->precio }}" required>
     
-    <button type="submit">✏️ Actualizar</button>
+    <button type="submit">Actualizar</button>
     <a href="{{ route('admin.productos.index') }}" class="cancelar" style="background:gray; color:white; padding:10px; text-decoration:none;">Cancelar</a>
 </form>
 

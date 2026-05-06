@@ -66,7 +66,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h1>🔐 Iniciar Sesión</h1>
+        <h1>Iniciar Sesión</h1>
         
         @if ($errors->any())
             <div class="error">
