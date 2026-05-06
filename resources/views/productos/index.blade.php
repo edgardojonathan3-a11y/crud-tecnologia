@@ -26,10 +26,10 @@
 </form>
 
 <a href="{{ route('admin.usuarios.index') }}" style="background:purple; color:white; padding:10px; text-decoration:none; float:right; margin-right:10px;">
-   👥 Usuarios
+   Usuarios
 </a>
 
-<h1>👑 Panel Admin - Productos Tecnológicos</h1>
+<h1>Panel Admin - Productos Tecnológicos</h1>
 <p>Bienvenido, <strong>{{ auth()->user()->name }}</strong></p>
 
 <br>

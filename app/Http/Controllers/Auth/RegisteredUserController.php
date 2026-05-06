@@ -43,14 +43,14 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'rol' => 'usuario', // ← AGREGAR ESTA LÍNEA: Asigna rol de usuario normal
+            'rol' => 'usuario', 
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        // Redirigir a la página de productos para usuarios normales
+
         return redirect('/usuario/productos');
     }
 }

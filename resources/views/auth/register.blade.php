@@ -66,7 +66,7 @@
 </head>
 <body>
     <div class="register-container">
-        <h1>📝 Crear Cuenta</h1>
+        <h1>Crear Cuenta</h1>
         
         @if ($errors->any())
             <div class="error">

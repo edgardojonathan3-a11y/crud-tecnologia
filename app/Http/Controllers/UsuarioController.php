@@ -32,7 +32,6 @@ class UsuarioController extends Controller
 
     public function destroy(User $usuario)
     {
-        // No permitir eliminar tu propio usuario
         if($usuario->id == auth()->id()) {
             return back()->with('error', 'No puedes eliminar tu propio usuario');
         }

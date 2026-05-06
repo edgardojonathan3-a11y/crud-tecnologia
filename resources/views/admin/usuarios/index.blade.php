@@ -26,17 +26,17 @@
     @csrf
 </form>
 
-<h1>👑 Panel de Administrador</h1>
+<h1>Panel de Administrador</h1>
 <p>Bienvenido, <strong>{{ auth()->user()->name }}</strong> (Administrador)</p>
 
 <hr>
 
-<h2>📦 Productos</h2>
+<h2>Productos</h2>
 <a href="{{ route('admin.productos.index') }}" class="btn btn-verde">Gestionar Productos</a>
 
 <hr>
 
-<h2>👥 Usuarios Registrados</h2>
+<h2>Usuarios Registrados</h2>
 
 @if(session('success'))
     <p style="color: green;">{{ session('success') }}</p>
