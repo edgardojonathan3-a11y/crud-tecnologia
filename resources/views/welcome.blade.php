@@ -128,10 +128,6 @@
             </article>
         </section>
 
-        <footer class="footer">
-            <span>Laravel v{{ Illuminate\Foundation\Application::VERSION }}</span>
-            <span>PHP v{{ PHP_VERSION }}</span>
-        </footer>
     </div>
 </body>
 </html>

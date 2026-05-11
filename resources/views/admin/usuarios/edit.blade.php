@@ -1,38 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Editar Usuario</title>
-    <style>
-        body { font-family: Arial; margin: 20px; }
-        form { width: 400px; border: 1px solid #ddd; padding: 20px; }
-        input, select { width: 100%; padding: 5px; margin: 5px 0 15px 0; }
-        button { background: orange; color: white; padding: 10px; border: none; cursor: pointer; }
-        .cancelar { background: gray; color: white; padding: 10px; text-decoration: none; display: inline-block; }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+<div class="mx-auto max-w-xl px-4 py-8 sm:px-6 lg:px-8">
 
-<h1>Editar Usuario</h1>
+    {{-- Header --}}
+    <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel de administrador</p>
+        <h1 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Editar usuario</h1>
+    </div>
 
-<form action="{{ route('admin.usuarios.update', $usuario) }}" method="POST">
-    @csrf
-    @method('PUT')
-    
-    <label>Nombre:</label>
-    <input type="text" name="name" value="{{ $usuario->name }}" required>
-    
-    <label>Email:</label>
-    <input type="email" name="email" value="{{ $usuario->email }}" required>
-    
-    <label>Rol:</label>
-    <select name="rol">
-        <option value="usuario" {{ $usuario->rol == 'usuario' ? 'selected' : '' }}>Usuario normal</option>
-        <option value="admin" {{ $usuario->rol == 'admin' ? 'selected' : '' }}>Administrador</option>
-    </select>
-    
-    <button type="submit">Actualizar Usuario</button>
-    <a href="{{ route('admin.usuarios.index') }}" class="cancelar">Cancelar</a>
-</form>
+    {{-- Formulario --}}
+    <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
+        <form action="{{ route('admin.usuarios.update', $usuario) }}" method="POST" class="flex flex-col gap-6">
+            @csrf
+            @method('PUT')
 
+            {{-- Nombre --}}
+            <div class="flex flex-col gap-1.5">
+                <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Nombre</label>
+                <input
+                    type="text"
+                    name="name"
+                    value="{{ $usuario->name }}"
+                    required
+                    class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-400 focus:bg-white focus:ring-2 focus:ring-slate-200"
+                >
+            </div>
+
+            {{-- Email --}}
+            <div class="flex flex-col gap-1.5">
+                <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    value="{{ $usuario->email }}"
+                    required
+                    class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-400 focus:bg-white focus:ring-2 focus:ring-slate-200"
+                >
+            </div>
+
+            {{-- Rol --}}
+            <div class="flex flex-col gap-1.5">
+                <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Rol</label>
+                <select
+                    name="rol"
+                    class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-400 focus:bg-white focus:ring-2 focus:ring-slate-200"
+                >
+                    <option value="usuario" {{ $usuario->rol == 'usuario' ? 'selected' : '' }}>Usuario normal</option>
+                    <option value="admin"   {{ $usuario->rol == 'admin'   ? 'selected' : '' }}>Administrador</option>
+                </select>
+            </div>
+
+            {{-- Acciones --}}
+            <div class="flex flex-col gap-3 pt-2 sm:flex-row">
+                <button
+                    type="submit"
+                    class="inline-flex flex-1 items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700">
+                    Actualizar usuario
+                </button>
+                <a href="{{ route('admin.usuarios.index') }}"
+                    class="inline-flex flex-1 items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
+                    Cancelar
+                </a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
 </body>
 </html>

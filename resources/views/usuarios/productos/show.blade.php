@@ -1,34 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>Detalle Producto</title>
-    <style>
-        body { font-family: Arial; margin: 20px; }
-        .card { border: 1px solid #ddd; padding: 20px; width: 400px; }
-        .btn { background: blue; color: white; padding: 10px; text-decoration: none; display: inline-block; }
-        .logout { background: red; color: white; padding: 10px; text-decoration: none; float: right; }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detalle del Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+<div class="mx-auto max-w-xl px-4 py-8 sm:px-6 lg:px-8">
 
-<a href="{{ route('logout') }}" class="logout" 
-   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-   Cerrar Sesión
-</a>
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
+    {{-- Header --}}
+    <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel de usuario</p>
+        <h1 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Detalle del producto</h1>
+    </div>
 
-<h1>Detalle del Producto</h1>
+    {{-- Card de detalle --}}
+    <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
+        <dl class="divide-y divide-slate-100">
 
-<div class="card">
-    <p><strong>ID:</strong> {{ $producto->id }}</p>
-    <p><strong>Nombre:</strong> {{ $producto->nombre }}</p>
-    <p><strong>Categoría:</strong> {{ $producto->categoria }}</p>
-    <p><strong>Precio:</strong> ${{ $producto->precio }}</p>
+            <div class="flex items-center justify-between px-6 py-4">
+                <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">ID</dt>
+                <dd class="text-sm font-medium text-slate-700">{{ $producto->id }}</dd>
+            </div>
+
+            <div class="flex items-center justify-between px-6 py-4">
+                <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Nombre</dt>
+                <dd class="text-sm font-medium text-slate-700">{{ $producto->nombre }}</dd>
+            </div>
+
+            <div class="flex items-center justify-between px-6 py-4">
+                <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Categoría</dt>
+                <dd class="text-sm font-medium text-slate-700">{{ $producto->categoria }}</dd>
+            </div>
+
+            <div class="flex items-center justify-between px-6 py-4">
+                <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Precio</dt>
+                <dd class="text-sm font-medium text-slate-700">${{ number_format($producto->precio, 2, ',', '.') }}</dd>
+            </div>
+
+            <div class="flex items-center justify-between px-6 py-4">
+                <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Fecha de creación</dt>
+                <dd class="text-sm font-medium text-slate-700">{{ $producto->created_at->format('d/m/Y H:i') }}</dd>
+            </div>
+
+        </dl>
+    </div>
+
+    {{-- Volver --}}
+    <div class="mt-6">
+        <a href="{{ route('usuario.productos') }}"
+           class="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50">
+            ← Demás productos
+        </a>
+    </div>
+
 </div>
-
-<a href="{{ route('usuario.productos') }}" class="btn">← Volver</a>
-
 </body>
 </html>

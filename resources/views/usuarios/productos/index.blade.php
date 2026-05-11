@@ -13,7 +13,6 @@
                 <div>
                     <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel de productos</p>
                     <h1 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Inventario tecnológico</h1>
-                    <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-600">Revisa los productos disponibles sin afectar la funcionalidad. El diseño es claro, responsive y elegante.</p>
                 </div>
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
                     <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">Usuario: {{ auth()->user()->name }}</span>
