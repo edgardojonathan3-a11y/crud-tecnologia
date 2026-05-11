@@ -10,20 +10,20 @@
 <body class="min-h-screen bg-slate-50 text-slate-900">
 <div class="mx-auto max-w-xl px-4 py-8 sm:px-6 lg:px-8">
 
-    {{-- Header --}}
+    <!-- Header -->
     <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
         <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel de administrador</p>
         <h1 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Crear nuevo producto</h1>
     </div>
 
-    {{-- Formulario --}}
+    <!-- Formulario -->
     <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
         <form action="{{ route('admin.productos.store') }}" method="POST" class="flex flex-col gap-6">
             @csrf
 
-            {{-- Nombre --}}
+    <!-- Nombre -->
             <div class="flex flex-col gap-1.5">
-                <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Nombre del producto</label>
+                <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Nombre producto</label>
                 <input
                     type="text"
                     name="nombre"
@@ -32,9 +32,9 @@
                 >
             </div>
 
-            {{-- Categoría --}}
+    <!-- Categoria -->
             <div class="flex flex-col gap-1.5">
-                <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Categoría</label>
+                <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Categorías</label>
                 <input
                     type="text"
                     name="categoria"
@@ -43,9 +43,9 @@
                 >
             </div>
 
-            {{-- Precio --}}
+    <!-- Precio -->
             <div class="flex flex-col gap-1.5">
-                <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Precio</label>
+                <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Precios</label>
                 <input
                     type="number"
                     step="0.01"
@@ -55,7 +55,7 @@
                 >
             </div>
 
-            {{-- Acciones --}}
+    <!-- Acciones -->
             <div class="flex flex-col gap-3 pt-2 sm:flex-row">
                 <button
                     type="submit"

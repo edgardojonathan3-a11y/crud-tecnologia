@@ -10,8 +10,8 @@
 <body class="min-h-screen bg-slate-50 text-slate-900">
 <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
 
-    {{-- Header --}}
-    <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+<!-- Header -->
+     <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
                 <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel de administrador</p>
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    {{-- Flash messages --}}
+<!-- Mensajes -->
     @if(session('success'))
         <div class="mb-6 rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-4 text-sm font-medium text-emerald-700">
             {{ session('success') }}
@@ -46,7 +46,7 @@
         </div>
     @endif
 
-    {{-- Tabla de usuarios --}}
+<!-- Tabla Usuarios -->
     <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-slate-200 text-sm text-slate-700">
@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    {{-- Footer link --}}
+<!-- Footer -->
     <div class="mt-6">
         <a href="{{ route('admin.productos.index') }}"
            class="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50">

@@ -10,7 +10,8 @@
 <body class="min-h-screen bg-slate-50 text-slate-900">
 <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
 
-    {{-- Header --}}
+        <!-- Header -->
+
     <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
@@ -23,11 +24,11 @@
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a href="{{ route('admin.productos.create') }}"
                    class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
-                    + Nuevo producto
+                    Nuevo producto
                 </a>
                 <a href="{{ route('admin.usuarios.index') }}"
                    class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-700">
-                    Usuarios
+                    usuarios
                 </a>
                 <a href="{{ route('logout') }}"
                    class="inline-flex items-center justify-center rounded-full bg-rose-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-rose-700"
@@ -38,7 +39,7 @@
         </div>
     </div>
 
-    {{-- Tabla de productos --}}
+    <!-- Tabla de productos -->
     <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-slate-200 text-sm text-slate-700">
@@ -91,6 +92,9 @@
     </div>
 
 </div>
+
+    <!-- Post -->
+
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
     @csrf

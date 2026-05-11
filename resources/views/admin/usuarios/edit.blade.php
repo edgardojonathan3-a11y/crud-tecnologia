@@ -10,13 +10,13 @@
 <body class="min-h-screen bg-slate-50 text-slate-900">
 <div class="mx-auto max-w-xl px-4 py-8 sm:px-6 lg:px-8">
 
-    {{-- Header --}}
-    <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+<!-- header -->
+     <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
         <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel de administrador</p>
         <h1 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Editar usuario</h1>
     </div>
 
-    {{-- Formulario --}}
+<!-- Formulario -->
     <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
         <form action="{{ route('admin.usuarios.update', $usuario) }}" method="POST" class="flex flex-col gap-6">
             @csrf
@@ -34,7 +34,7 @@
                 >
             </div>
 
-            {{-- Email --}}
+<!-- Casilla -->
             <div class="flex flex-col gap-1.5">
                 <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Email</label>
                 <input
@@ -46,7 +46,7 @@
                 >
             </div>
 
-            {{-- Rol --}}
+<!-- Rol -->
             <div class="flex flex-col gap-1.5">
                 <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Rol</label>
                 <select

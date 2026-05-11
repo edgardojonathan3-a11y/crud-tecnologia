@@ -11,7 +11,7 @@
         <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
             <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div>
-                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel de productos</p>
+                    <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel productos</p>
                     <h1 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Inventario tecnológico</h1>
                 </div>
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -20,6 +20,8 @@
                 </div>
             </div>
         </div>
+
+            <!-- Categoria -->
 
         <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
             <div class="overflow-x-auto">
@@ -54,6 +56,9 @@
             </div>
         </div>
     </div>
+
+        <!-- Post -->
+
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
         @csrf

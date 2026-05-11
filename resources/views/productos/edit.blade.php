@@ -10,19 +10,19 @@
 <body class="min-h-screen bg-slate-50 text-slate-900">
 <div class="mx-auto max-w-xl px-4 py-8 sm:px-6 lg:px-8">
 
-    {{-- Header --}}
+        <!-- Header -->
     <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
         <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel de administrador</p>
         <h1 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Editar producto</h1>
     </div>
 
-    {{-- Formulario --}}
+    <!-- Formulario -->
     <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
         <form action="{{ route('admin.productos.update', $producto) }}" method="POST" class="flex flex-col gap-6">
             @csrf
             @method('PUT')
 
-            {{-- Nombre --}}
+                <!-- Nombre -->
             <div class="flex flex-col gap-1.5">
                 <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Nombre del producto</label>
                 <input
@@ -34,7 +34,7 @@
                 >
             </div>
 
-            {{-- Categoría --}}
+                <!-- Categoria -->
             <div class="flex flex-col gap-1.5">
                 <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Categoría</label>
                 <input
@@ -46,7 +46,7 @@
                 >
             </div>
 
-            {{-- Precio --}}
+                <!-- El precio -->
             <div class="flex flex-col gap-1.5">
                 <label class="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Precio</label>
                 <input
@@ -59,7 +59,7 @@
                 >
             </div>
 
-            {{-- Acciones --}}
+              <!-- Acciones -->
             <div class="flex flex-col gap-3 pt-2 sm:flex-row">
                 <button
                     type="submit"
@@ -69,7 +69,7 @@
                 
                 <a href="{{ route('admin.productos.index') }}"
                     class="inline-flex flex-1 items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
-                    Cancelar
+                    Cancelar producto
                 </a>
             </div>
 

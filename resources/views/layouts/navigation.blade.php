@@ -10,7 +10,7 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- Links de Navegacion -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <!-- Settings Dropdown -->
+            <!--  Menú desplegable  -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -34,7 +34,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <!-- Authentication -->
+                        <!-- Autenticacion -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
+    <!-- Diseño responsive -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">

@@ -10,13 +10,14 @@
 <body class="min-h-screen bg-slate-50 text-slate-900">
 <div class="mx-auto max-w-xl px-4 py-8 sm:px-6 lg:px-8">
 
-    {{-- Header --}}
+    <!-- Header -->
+    
     <div class="mb-8 rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_64px_rgba(15,23,42,0.08)] backdrop-blur-sm">
-        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Panel de usuario</p>
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">El panel de usuario</p>
         <h1 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900">Detalle del producto</h1>
     </div>
 
-    {{-- Card de detalle --}}
+    <!-- Carta de detalle -->
     <div class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm">
         <dl class="divide-y divide-slate-100">
 
@@ -48,11 +49,11 @@
         </dl>
     </div>
 
-    {{-- Volver --}}
+        <!-- Regresar -->
     <div class="mt-6">
         <a href="{{ route('usuario.productos') }}"
            class="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50">
-            ← Demás productos
+            ← Otros productos
         </a>
     </div>
 
