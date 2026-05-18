@@ -25,6 +25,10 @@ Route::middleware(['auth', 'rol:usuario'])->prefix('usuario')->name('usuario.')-
 Route::middleware(['auth', 'rol:admin'])->prefix('admin')->name('admin.')->group(function () {
     // Productos
     Route::resource('productos', ProductoController::class);
+
+    // Dashboard
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    
     
     // Usuarios
     Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
@@ -37,3 +41,4 @@ Route::get('/registro', [App\Http\Controllers\Auth\RegisteredUserController::cla
 Route::post('/registro', [App\Http\Controllers\Auth\RegisteredUserController::class, 'store']);
 // Rutas de autenticación (las provee Breeze)
 require __DIR__.'/auth.php';
+

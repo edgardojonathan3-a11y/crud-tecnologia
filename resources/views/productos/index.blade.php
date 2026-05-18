@@ -28,7 +28,11 @@
                 </a>
                 <a href="{{ route('admin.usuarios.index') }}"
                    class="inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-700">
-                    usuarios
+                    Usuarios
+                </a>
+                <a href="{{ route('admin.dashboard') }}"
+                    class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
+                    Dashboard
                 </a>
                 <a href="{{ route('logout') }}"
                    class="inline-flex items-center justify-center rounded-full bg-rose-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-rose-700"
